@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B1846D9C-C5A2-4E1E-957F-26E61B868D00"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "245858B2-F7F7-4ADF-B23A-4536C94CF927"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "metro-watch WatchKit Extension/SettingsController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "SettingsController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4979882-B0FA-4299-9736-1FF5C9B5865F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "metro-watch WatchKit Extension/TimeSignatureController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "TimeSignatureController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E4979882-B0FA-4299-9736-1FF5C9B5865F - 3a5a5252114ea8de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "metro_watch_WatchKit_Extension.TimeSignatureController.leftBorderImage.getter : Swift.Optional&lt;__C.WKInterfaceImage&gt;"
+                  moduleName = "metro-watch WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/Watch%20IOS/metro-watch/metro-watch%20WatchKit%20Extension/TimeSignatureController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "98">
+               </Location>
+               <Location
+                  uuid = "E4979882-B0FA-4299-9736-1FF5C9B5865F - fd942fdc3e3030ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "metro_watch_WatchKit_Extension.TimeSignatureController.leftBorderImage.setter : Swift.Optional&lt;__C.WKInterfaceImage&gt;"
+                  moduleName = "metro-watch WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/Watch%20IOS/metro-watch/metro-watch%20WatchKit%20Extension/TimeSignatureController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "E4979882-B0FA-4299-9736-1FF5C9B5865F - f8378ce75688b2de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "metro_watch_WatchKit_Extension.TimeSignatureController.leftBorderImage.modify : Swift.Optional&lt;__C.WKInterfaceImage&gt;"
+                  moduleName = "metro-watch WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/Watch%20IOS/metro-watch/metro-watch%20WatchKit%20Extension/TimeSignatureController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  uuid = "E4979882-B0FA-4299-9736-1FF5C9B5865F - f7766868b2f37dd5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "metro_watch_WatchKit_Extension.TimeSignatureController.leftBorderImage.modify : Swift.Optional&lt;__C.WKInterfaceImage&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "metro-watch WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/Watch%20IOS/metro-watch/metro-watch%20WatchKit%20Extension/TimeSignatureController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "E4979882-B0FA-4299-9736-1FF5C9B5865F - 7551670911b9455e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "metro_watch_WatchKit_Extension.TimeSignatureController.init() -&gt; metro_watch_WatchKit_Extension.TimeSignatureController"
+                  moduleName = "metro-watch WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/Watch%20IOS/metro-watch/metro-watch%20WatchKit%20Extension/TimeSignatureController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "327">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

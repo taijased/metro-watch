@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch40"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Metronome-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="HomeController" title="Metronome" id="AgC-eL-Hgc" customClass="HomeController" customModule="metro_watch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="172" alignment="center" verticalAlignment="center" id="aR8-cx-EWp">
+                            <items>
+                                <imageView width="130" height="130" alignment="center" verticalAlignment="center" image="circle.fill" catalog="system" id="GHG-Tp-YsR">
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="AEj-7g-ICj">
+                                            <connections>
+                                                <action selector="tapToBPM:" destination="AgC-eL-Hgc" id="uBf-HH-Sye"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </items>
+                            <gestureRecognizers>
+                                <swipeGestureRecognizer direction="2" id="K4T-Rb-kEY">
+                                    <connections>
+                                        <action selector="goToSettings:" destination="AgC-eL-Hgc" id="5HR-np-9Oe"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                            </gestureRecognizers>
+                        </group>
+                    </items>
+                    <connections>
+                        <segue destination="c9d-x3-UP7" kind="relationship" relationship="nextPage" id="Q9N-Js-hhj"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="-177" y="234"/>
+        </scene>
+        <!--SettingsController-->
+        <scene sceneID="Tdu-3y-4Q5">
+            <objects>
+                <controller identifier="SettingsController" id="c9d-x3-UP7" customClass="SettingsController" customModule="metro_watch_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="175" alignment="left" layout="vertical" spacing="9" id="CQT-4m-Gic">
+                            <items>
+                                <button alignment="center" backgroundImage="play" id="3hN-4b-l8K">
+                                    <connections>
+                                        <action selector="playButtonTapped" destination="c9d-x3-UP7" id="VzY-W4-Nif"/>
+                                    </connections>
+                                </button>
+                                <group width="0.90000000000000002" widthAdjustment="1" alignment="center" id="hKH-F9-PgU">
+                                    <items>
+                                        <button width="45" height="40" alignment="center" title="16/3" id="0sE-Ey-PGl">
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                            <connections>
+                                                <action selector="changeTemp" destination="c9d-x3-UP7" id="rTf-aM-EtI"/>
+                                                <segue destination="GVd-b6-mEq" kind="modal" id="J7b-s6-lf0"/>
+                                            </connections>
+                                        </button>
+                                        <button width="45" height="40" alignment="center" backgroundImage="btn_time" id="odL-na-oEf">
+                                            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                            <connections>
+                                                <action selector="changeTime" destination="c9d-x3-UP7" id="vAP-J3-y2L"/>
+                                                <segue destination="X2Q-ey-Kbi" kind="modal" id="fBl-92-L6d"/>
+                                            </connections>
+                                        </button>
+                                        <button width="45" height="40" alignment="center" backgroundImage="btn_note" id="sjE-tv-uGx">
+                                            <connections>
+                                                <action selector="changeNote" destination="c9d-x3-UP7" id="5Ye-Mo-kcH"/>
+                                                <segue destination="xlY-vh-NpM" kind="modal" id="u1g-rR-IEE"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="playButton" destination="3hN-4b-l8K" id="djU-bw-jjr"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="272.83950617283949" y="233.42639593908626"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -27,21 +101,130 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="531" y="2179"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="metro_watch_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="922" y="2194"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="metro_watch_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="922" y="1947"/>
+        </scene>
+        <!--SongDurationController-->
+        <scene sceneID="l0C-1g-yBI">
+            <objects>
+                <controller identifier="SongDurationController" id="X2Q-ey-Kbi" customClass="SongDurationController" customModule="metro_watch_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="872" y="246"/>
+        </scene>
+        <!--SubdivisionController-->
+        <scene sceneID="jDj-m6-g6g">
+            <objects>
+                <controller identifier="SubdivisionController" id="xlY-vh-NpM" customClass="SubdivisionController" customModule="metro_watch_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="166" alignment="center" verticalAlignment="center" layout="vertical" spacing="27" id="Zea-V9-Rcl">
+                            <items>
+                                <label alignment="center" text="SUBDIVISION" id="8c8-uK-dE6">
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </label>
+                                <group width="0.80000000000000004" alignment="center" layout="overlap" id="Dl6-DN-ACc">
+                                    <items>
+                                        <imageView width="1" alignment="center" verticalAlignment="center" image="green_border" id="M3w-ta-nB1"/>
+                                        <button width="26" height="26" alignment="center" verticalAlignment="center" backgroundImage="note" id="LWj-34-CTW"/>
+                                    </items>
+                                    <gestureRecognizers>
+                                        <tapGestureRecognizer id="6GN-Lk-pSv">
+                                            <connections>
+                                                <action selector="noteTapped:" destination="xlY-vh-NpM" id="et7-1b-Qv7"/>
+                                            </connections>
+                                        </tapGestureRecognizer>
+                                    </gestureRecognizers>
+                                </group>
+                                <button width="1" alignment="left" title="Done" id="hBS-ib-vkX">
+                                    <color key="backgroundColor" red="0.14117647058823529" green="0.78431372549019607" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="doneTapped" destination="xlY-vh-NpM" id="a18-Kf-Fza"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="636" y="660"/>
+        </scene>
+        <!--TimeSignatureController-->
+        <scene sceneID="iy1-zC-vcV">
+            <objects>
+                <controller identifier="TimeSignatureController" id="GVd-b6-mEq" customClass="TimeSignatureController" customModule="metro_watch_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="center" layout="vertical" radius="0.0" spacing="15" id="xcP-8a-uPt">
+                            <items>
+                                <label alignment="center" text="TIME SIGNATURE" textAlignment="center" id="R86-ic-Ck0">
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </label>
+                                <group width="1" alignment="center" id="dSi-pu-te2">
+                                    <items>
+                                        <group width="62" height="50" alignment="left" verticalAlignment="center" layout="overlap" id="vPx-wb-wqS">
+                                            <items>
+                                                <imageView height="50" alignment="left" verticalAlignment="bottom" image="green_border_small" id="JlJ-sv-91O"/>
+                                                <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="w2p-s8-rP6">
+                                                    <connections>
+                                                        <action selector="leftPickerChanged:" destination="GVd-b6-mEq" id="zJj-CQ-0lU"/>
+                                                    </connections>
+                                                </picker>
+                                            </items>
+                                        </group>
+                                        <label width="10" alignment="center" verticalAlignment="center" text="/" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="HOC-iy-3wK">
+                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                        </label>
+                                        <group width="62" height="50" alignment="right" verticalAlignment="center" layout="overlap" id="WjK-y3-kob">
+                                            <items>
+                                                <imageView height="50" alignment="left" verticalAlignment="bottom" image="white_border_small" id="KH5-qe-4nW"/>
+                                                <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="v4s-ic-HeY">
+                                                    <connections>
+                                                        <action selector="rightPickerChanged:" destination="GVd-b6-mEq" id="WEV-DQ-dtS"/>
+                                                    </connections>
+                                                </picker>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <button width="1" alignment="left" title="Done" id="vlS-0T-Spy">
+                                    <color key="backgroundColor" red="0.14117647059999999" green="0.7843137255" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="doneTapped" destination="GVd-b6-mEq" id="NNr-nr-mgc"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="leftBorderImage" destination="KH5-qe-4nW" id="zFF-hy-K1p"/>
+                        <outlet property="leftPicker" destination="w2p-s8-rP6" id="ctm-LZ-gQa"/>
+                        <outlet property="rightBorderImage" destination="JlJ-sv-91O" id="BiY-TG-TD1"/>
+                        <outlet property="rightPicker" destination="v4s-ic-HeY" id="YW7-cR-HxQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="635.50617283950623" y="-84.137055837563437"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_note" width="52" height="40"/>
+        <image name="btn_time" width="53" height="40"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="green_border" width="120" height="50"/>
+        <image name="green_border_small" width="62" height="50"/>
+        <image name="note" width="26" height="26"/>
+        <image name="play" width="140" height="114"/>
+        <image name="white_border_small" width="62" height="50"/>
+    </resources>
 </document>

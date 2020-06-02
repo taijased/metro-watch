@@ -11,10 +11,14 @@
 		13C421E824868E5D00FFE119 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13C421E624868E5D00FFE119 /* Interface.storyboard */; };
 		13C421EA24868E5E00FFE119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13C421E924868E5E00FFE119 /* Assets.xcassets */; };
 		13C421F124868E5E00FFE119 /* metro-watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13C421F024868E5E00FFE119 /* metro-watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		13C421F624868E5E00FFE119 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C421F524868E5E00FFE119 /* InterfaceController.swift */; };
+		13C421F624868E5E00FFE119 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C421F524868E5E00FFE119 /* HomeController.swift */; };
 		13C421F824868E5E00FFE119 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C421F724868E5E00FFE119 /* ExtensionDelegate.swift */; };
 		13C421FA24868E5E00FFE119 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C421F924868E5E00FFE119 /* NotificationController.swift */; };
 		13C421FC24868E5F00FFE119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13C421FB24868E5F00FFE119 /* Assets.xcassets */; };
+		13C4220D248692B300FFE119 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4220C248692B300FFE119 /* SettingsController.swift */; };
+		13C4220F24869DD800FFE119 /* SongDurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4220E24869DD800FFE119 /* SongDurationController.swift */; };
+		13C4221124869E0500FFE119 /* SubdivisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4221024869E0500FFE119 /* SubdivisionController.swift */; };
+		13C4221324869E2900FFE119 /* TimeSignatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4221224869E2900FFE119 /* TimeSignatureController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +70,16 @@
 		13C421E924868E5E00FFE119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13C421EB24868E5E00FFE119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13C421F024868E5E00FFE119 /* metro-watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "metro-watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13C421F524868E5E00FFE119 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		13C421F524868E5E00FFE119 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		13C421F724868E5E00FFE119 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		13C421F924868E5E00FFE119 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		13C421FB24868E5F00FFE119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13C421FD24868E5F00FFE119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13C421FE24868E5F00FFE119 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		13C4220C248692B300FFE119 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		13C4220E24869DD800FFE119 /* SongDurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDurationController.swift; sourceTree = "<group>"; };
+		13C4221024869E0500FFE119 /* SubdivisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionController.swift; sourceTree = "<group>"; };
+		13C4221224869E2900FFE119 /* TimeSignatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSignatureController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +125,13 @@
 		13C421F424868E5E00FFE119 /* metro-watch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				13C421F524868E5E00FFE119 /* InterfaceController.swift */,
+				13C421F524868E5E00FFE119 /* HomeController.swift */,
+				13C4220C248692B300FFE119 /* SettingsController.swift */,
 				13C421F724868E5E00FFE119 /* ExtensionDelegate.swift */,
 				13C421F924868E5E00FFE119 /* NotificationController.swift */,
+				13C4220E24869DD800FFE119 /* SongDurationController.swift */,
+				13C4221024869E0500FFE119 /* SubdivisionController.swift */,
+				13C4221224869E2900FFE119 /* TimeSignatureController.swift */,
 				13C421FB24868E5F00FFE119 /* Assets.xcassets */,
 				13C421FD24868E5F00FFE119 /* Info.plist */,
 				13C421FE24868E5F00FFE119 /* PushNotificationPayload.apns */,
@@ -254,9 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C4220D248692B300FFE119 /* SettingsController.swift in Sources */,
 				13C421FA24868E5E00FFE119 /* NotificationController.swift in Sources */,
+				13C4220F24869DD800FFE119 /* SongDurationController.swift in Sources */,
 				13C421F824868E5E00FFE119 /* ExtensionDelegate.swift in Sources */,
-				13C421F624868E5E00FFE119 /* InterfaceController.swift in Sources */,
+				13C421F624868E5E00FFE119 /* HomeController.swift in Sources */,
+				13C4221324869E2900FFE119 /* TimeSignatureController.swift in Sources */,
+				13C4221124869E0500FFE119 /* SubdivisionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
