@@ -120,9 +120,66 @@
         <!--SongDurationController-->
         <scene sceneID="l0C-1g-yBI">
             <objects>
-                <controller identifier="SongDurationController" id="X2Q-ey-Kbi" customClass="SongDurationController" customModule="metro_watch_WatchKit_Extension"/>
+                <controller identifier="SongDurationController" id="X2Q-ey-Kbi" customClass="SongDurationController" customModule="metro_watch_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" spacing="0.0" id="cEJ-HI-Xyg">
+                            <items>
+                                <label alignment="center" text="Label" id="gT7-Ct-ksc"/>
+                                <group width="1" alignment="center" verticalAlignment="bottom" layout="vertical" spacing="23" id="Yid-Md-hvA">
+                                    <items>
+                                        <group width="1" alignment="center" id="qdf-uw-KUH">
+                                            <items>
+                                                <group width="50" height="50" alignment="left" verticalAlignment="center" layout="overlap" id="eET-Re-YwW">
+                                                    <items>
+                                                        <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="f0L-W4-uhX">
+                                                            <connections>
+                                                                <action selector="typePickerChanged:" destination="X2Q-ey-Kbi" id="w1D-cJ-tHL"/>
+                                                            </connections>
+                                                        </picker>
+                                                        <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="EuG-uv-O8J"/>
+                                                    </items>
+                                                </group>
+                                                <group width="50" height="50" alignment="center" verticalAlignment="center" layout="overlap" id="ZV9-pd-gzy">
+                                                    <items>
+                                                        <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="6fD-WY-ZmL">
+                                                            <connections>
+                                                                <action selector="centerPickerChanged:" destination="X2Q-ey-Kbi" id="0Da-Mc-P06"/>
+                                                            </connections>
+                                                        </picker>
+                                                        <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="czl-nB-aas"/>
+                                                    </items>
+                                                </group>
+                                                <group width="50" height="50" alignment="right" verticalAlignment="center" layout="overlap" id="G6h-1j-FR8">
+                                                    <items>
+                                                        <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="7SY-Rn-OQ2">
+                                                            <connections>
+                                                                <action selector="lastPickerChanged:" destination="X2Q-ey-Kbi" id="vMg-A1-mO1"/>
+                                                            </connections>
+                                                        </picker>
+                                                        <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="NUu-z4-aJD"/>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="Gmf-lS-NFV">
+                                            <color key="backgroundColor" red="0.14117647059999999" green="0.7843137255" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="centerPicker" destination="6fD-WY-ZmL" id="t2E-8g-f4x"/>
+                        <outlet property="centerPickerImage" destination="czl-nB-aas" id="Ysu-cD-fRE"/>
+                        <outlet property="lastPicker" destination="7SY-Rn-OQ2" id="3FC-S1-Gfw"/>
+                        <outlet property="lastPickerImage" destination="NUu-z4-aJD" id="AyZ-ah-no0"/>
+                        <outlet property="typePicker" destination="f0L-W4-uhX" id="45u-s5-5Ie"/>
+                        <outlet property="typePickerImage" destination="EuG-uv-O8J" id="Nch-fp-I0Q"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="872" y="246"/>
+            <point key="canvasLocation" x="871.40740740740739" y="245.50761421319794"/>
         </scene>
         <!--SubdivisionController-->
         <scene sceneID="jDj-m6-g6g">

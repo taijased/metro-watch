@@ -23,6 +23,7 @@ final class TimeSignatureController: WKInterfaceController {
     
     
     @IBAction func leftPickerChanged(_ value: Int) {
+        WKInterfaceDevice.current().play(.click)
         DispatchQueue.main.async { [weak self] in
             self?.rightBorderImage.setImage(UIImage(named: "green_border_small"))
             self?.leftBorderImage.setImage(UIImage(named: "white_border_small"))
@@ -31,7 +32,7 @@ final class TimeSignatureController: WKInterfaceController {
 
     
     @IBAction func rightPickerChanged(_ value: Int) {
-        
+        WKInterfaceDevice.current().play(.click)
         DispatchQueue.main.async { [weak self] in
             self?.leftBorderImage.setImage(UIImage(named: "green_border_small"))
             self?.rightBorderImage.setImage(UIImage(named: "white_border_small"))
