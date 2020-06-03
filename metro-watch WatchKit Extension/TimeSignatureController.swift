@@ -14,6 +14,9 @@ import Foundation
 final class TimeSignatureController: WKInterfaceController {
     
     
+    var timeSignature: TimeSignatureState
+    
+    
     @IBOutlet weak var leftPicker: WKInterfacePicker!
     @IBOutlet weak var rightPicker: WKInterfacePicker!
     
@@ -28,6 +31,7 @@ final class TimeSignatureController: WKInterfaceController {
             self?.rightBorderImage.setImage(UIImage(named: "green_border_small"))
             self?.leftBorderImage.setImage(UIImage(named: "white_border_small"))
         }
+        self.timeSignature = TimeSignatureState(left: value, right: self.timeSignature.right ?? 0)
     }
 
     
@@ -37,8 +41,14 @@ final class TimeSignatureController: WKInterfaceController {
             self?.leftBorderImage.setImage(UIImage(named: "green_border_small"))
             self?.rightBorderImage.setImage(UIImage(named: "white_border_small"))
         }
+        self.timeSignature = TimeSignatureState(left: self.timeSignature.left ?? 0, right: value)
     }
     
+    
+    override init() {
+        timeSignature = UserSettings.timeSignature ?? TimeSignatureState(left: 0, right: 0)
+        super.init()
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -48,38 +58,16 @@ final class TimeSignatureController: WKInterfaceController {
     
     fileprivate func setupPickers() {
         
-        print(#function)
+        leftPicker.setItems(PickersValueType.timeSignature.getPickerItems())
+        rightPicker.setItems(PickersValueType.timeSignatureHalf.getPickerItems())
         
-        
-        
-        
-        //Сделай леха тут такие какие нужны данные
-        let leftItemList: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        
-        let pickerItems: [WKPickerItem] = leftItemList.map {
-            let pickerItem = WKPickerItem()
-            pickerItem.caption = "\($0)"
-            pickerItem.title = "\($0)"
-            return pickerItem
-        }
-        
-        
-        leftPicker.setItems(pickerItems)
-        rightPicker.setItems(pickerItems)
-    }
-    
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+        leftPicker.setSelectedItemIndex(timeSignature.left ?? 0)
+        rightPicker.setSelectedItemIndex(timeSignature.right ?? 0)
     }
     
     @IBAction func doneTapped() {
-        print(#function)
+        UserSettings.timeSignature = self.timeSignature
+        self.dismiss()
     }
     
 }

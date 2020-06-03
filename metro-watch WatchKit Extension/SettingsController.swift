@@ -23,33 +23,20 @@ class SettingsController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        
+       
     }
+    
+    @IBOutlet weak var timeSignatureLabel: WKInterfaceButton!
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        let items = [1, 2, 4, 8, 16, 32]
+        let state = UserSettings.timeSignature
+        let label = "\((state?.left ?? 0) + 1)/\(items[state?.right ?? 0])"
+        
+        //хуевый хак че то гоолова не работает что нибудь лучше придумать
+        
+        self.timeSignatureLabel.setTitle(label)
     }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-    
-    
-    
-    @IBAction func changeNote() {
-         print(#function)
-    }
-    
-    @IBAction func changeTime() {
-         print(#function)
-    }
-    
-
-    @IBAction func changeTemp() {
-        print(#function)
-    }
-    
     
 }

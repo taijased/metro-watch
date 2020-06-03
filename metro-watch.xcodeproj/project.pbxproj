@@ -137,10 +137,10 @@
 				13C4221024869E0500FFE119 /* SubdivisionController.swift */,
 				13C4221224869E2900FFE119 /* TimeSignatureController.swift */,
 				13EE354A2487E63A003CF1DB /* UserSettings.swift */,
+				132344E92487F5B100C3EDDF /* PickersValueType.swift */,
 				13C421FB24868E5F00FFE119 /* Assets.xcassets */,
 				13C421FD24868E5F00FFE119 /* Info.plist */,
 				13C421FE24868E5F00FFE119 /* PushNotificationPayload.apns */,
-				132344E92487F5B100C3EDDF /* PickersValueType.swift */,
 			);
 			path = "metro-watch WatchKit Extension";
 			sourceTree = "<group>";

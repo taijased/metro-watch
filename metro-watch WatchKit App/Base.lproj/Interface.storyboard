@@ -13,16 +13,29 @@
                     <items>
                         <group width="1" height="172" alignment="center" verticalAlignment="center" id="aR8-cx-EWp">
                             <items>
-                                <imageView width="130" height="130" alignment="center" verticalAlignment="center" image="circle.fill" catalog="system" id="GHG-Tp-YsR">
-                                    <gestureRecognizers>
-                                        <tapGestureRecognizer id="AEj-7g-ICj">
-                                            <connections>
-                                                <action selector="tapToBPM:" destination="AgC-eL-Hgc" id="uBf-HH-Sye"/>
-                                            </connections>
-                                        </tapGestureRecognizer>
-                                    </gestureRecognizers>
-                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </imageView>
+                                <group width="1" alignment="left" layout="overlap" id="jBz-4P-C4m">
+                                    <items>
+                                        <imageView width="134" height="134" alignment="center" verticalAlignment="center" image="circle.fill" catalog="system" id="GHG-Tp-YsR">
+                                            <gestureRecognizers>
+                                                <tapGestureRecognizer id="AEj-7g-ICj">
+                                                    <connections>
+                                                        <action selector="tapToBPM:" destination="AgC-eL-Hgc" id="uBf-HH-Sye"/>
+                                                    </connections>
+                                                </tapGestureRecognizer>
+                                            </gestureRecognizers>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                        <group alignment="center" verticalAlignment="center" layout="vertical" id="U2c-WD-rXM">
+                                            <items>
+                                                <label alignment="center" text="500" id="TR8-cY-dxC">
+                                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                                </label>
+                                                <imageView alignment="center" verticalAlignment="center" image="divider" id="Hua-w3-f27"/>
+                                                <label alignment="center" verticalAlignment="bottom" text="TAP TO BPM" id="dmv-cm-NiJ"/>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
                             </items>
                             <gestureRecognizers>
                                 <swipeGestureRecognizer direction="2" id="K4T-Rb-kEY">
@@ -31,6 +44,7 @@
                                     </connections>
                                 </swipeGestureRecognizer>
                             </gestureRecognizers>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="20"/>
                         </group>
                     </items>
                     <connections>
@@ -54,23 +68,20 @@
                                 </button>
                                 <group width="0.90000000000000002" widthAdjustment="1" alignment="center" id="hKH-F9-PgU">
                                     <items>
-                                        <button width="45" height="40" alignment="left" verticalAlignment="center" title="16/3" id="0sE-Ey-PGl">
+                                        <button width="45" height="40" alignment="left" verticalAlignment="center" title="label" id="0sE-Ey-PGl">
                                             <fontDescription key="font" type="system" pointSize="12"/>
                                             <connections>
-                                                <action selector="changeTemp" destination="c9d-x3-UP7" id="rTf-aM-EtI"/>
                                                 <segue destination="GVd-b6-mEq" kind="modal" id="J7b-s6-lf0"/>
                                             </connections>
                                         </button>
                                         <button width="45" height="40" alignment="center" verticalAlignment="center" backgroundImage="btn_time" id="odL-na-oEf">
                                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                             <connections>
-                                                <action selector="changeTime" destination="c9d-x3-UP7" id="vAP-J3-y2L"/>
                                                 <segue destination="X2Q-ey-Kbi" kind="modal" id="fBl-92-L6d"/>
                                             </connections>
                                         </button>
                                         <button width="45" height="40" alignment="right" verticalAlignment="center" backgroundImage="btn_note" id="sjE-tv-uGx">
                                             <connections>
-                                                <action selector="changeNote" destination="c9d-x3-UP7" id="5Ye-Mo-kcH"/>
                                                 <segue destination="xlY-vh-NpM" kind="modal" id="u1g-rR-IEE"/>
                                             </connections>
                                         </button>
@@ -81,6 +92,7 @@
                     </items>
                     <connections>
                         <outlet property="playButton" destination="3hN-4b-l8K" id="djU-bw-jjr"/>
+                        <outlet property="timeSignatureLabel" destination="0sE-Ey-PGl" id="TtE-8j-HtF"/>
                     </connections>
                 </controller>
             </objects>
@@ -117,16 +129,13 @@
             </objects>
             <point key="canvasLocation" x="922" y="1947"/>
         </scene>
-        <!--SongDurationController-->
+        <!--SONG DURATION-->
         <scene sceneID="l0C-1g-yBI">
             <objects>
-                <controller identifier="SongDurationController" id="X2Q-ey-Kbi" customClass="SongDurationController" customModule="metro_watch_WatchKit_Extension">
+                <controller identifier="SongDurationController" title="SONG DURATION" id="X2Q-ey-Kbi" customClass="SongDurationController" customModule="metro_watch_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="cEJ-HI-Xyg">
+                        <group width="1" height="1" alignment="left" layout="vertical" spacing="20" id="cEJ-HI-Xyg">
                             <items>
-                                <label alignment="center" text="SONG DURATION" id="gT7-Ct-ksc">
-                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </label>
                                 <group width="1" alignment="center" verticalAlignment="center" id="qdf-uw-KUH">
                                     <items>
                                         <group width="50" height="50" alignment="left" verticalAlignment="center" layout="overlap" id="eET-Re-YwW">
@@ -161,7 +170,7 @@
                                         </group>
                                     </items>
                                 </group>
-                                <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="Gmf-lS-NFV">
+                                <button width="1" alignment="center" verticalAlignment="center" title="Done" id="Gmf-lS-NFV">
                                     <color key="backgroundColor" red="0.14117647059999999" green="0.7843137255" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
                                         <action selector="doneTappeed" destination="X2Q-ey-Kbi" id="189-Lg-Kqp"/>
@@ -182,16 +191,13 @@
             </objects>
             <point key="canvasLocation" x="871.40740740740739" y="245.50761421319794"/>
         </scene>
-        <!--SubdivisionController-->
+        <!--SUBDIVISION-->
         <scene sceneID="jDj-m6-g6g">
             <objects>
-                <controller identifier="SubdivisionController" id="xlY-vh-NpM" customClass="SubdivisionController" customModule="metro_watch_WatchKit_Extension">
+                <controller identifier="SubdivisionController" title="SUBDIVISION" id="xlY-vh-NpM" customClass="SubdivisionController" customModule="metro_watch_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="27" id="Zea-V9-Rcl">
+                        <group alignment="center" verticalAlignment="center" layout="vertical" spacing="25" id="Zea-V9-Rcl">
                             <items>
-                                <label alignment="center" text="SUBDIVISION" id="8c8-uK-dE6">
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </label>
                                 <group width="0.80000000000000004" alignment="center" layout="overlap" id="Dl6-DN-ACc">
                                     <items>
                                         <imageView width="1" alignment="center" verticalAlignment="center" image="green_border" id="M3w-ta-nB1"/>
@@ -218,16 +224,13 @@
             </objects>
             <point key="canvasLocation" x="636" y="660"/>
         </scene>
-        <!--TimeSignatureController-->
+        <!--TIME SIGNATURE-->
         <scene sceneID="iy1-zC-vcV">
             <objects>
-                <controller identifier="TimeSignatureController" id="GVd-b6-mEq" customClass="TimeSignatureController" customModule="metro_watch_WatchKit_Extension">
+                <controller identifier="TimeSignatureController" title="TIME SIGNATURE" id="GVd-b6-mEq" customClass="TimeSignatureController" customModule="metro_watch_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="center" layout="vertical" radius="0.0" spacing="15" id="xcP-8a-uPt">
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" radius="0.0" spacing="25" id="xcP-8a-uPt">
                             <items>
-                                <label alignment="center" text="TIME SIGNATURE" textAlignment="center" id="R86-ic-Ck0">
-                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </label>
                                 <group width="1" alignment="center" id="dSi-pu-te2">
                                     <items>
                                         <group width="62" height="50" alignment="left" verticalAlignment="center" layout="overlap" id="vPx-wb-wqS">
@@ -279,6 +282,7 @@
         <image name="btn_note" width="52" height="40"/>
         <image name="btn_time" width="53" height="40"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="divider" width="80" height="1"/>
         <image name="green_border" width="120" height="50"/>
         <image name="green_border_small" width="62" height="50"/>
         <image name="note" width="26" height="26"/>

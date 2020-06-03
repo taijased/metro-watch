@@ -20,7 +20,11 @@ enum PickersValueType {
         var result: [WKPickerItem] = []
         switch self {
         case .timeSignature:
-            let items = [1...60]
+            
+            var items: [Int] = []
+            for item in 1...59 {
+                items.append(item)
+            }
             result = items.map {
                 let pickerItem = WKPickerItem()
                 pickerItem.caption = "\($0)"
