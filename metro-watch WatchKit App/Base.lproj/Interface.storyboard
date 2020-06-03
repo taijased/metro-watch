@@ -40,35 +40,35 @@
             </objects>
             <point key="canvasLocation" x="-177" y="234"/>
         </scene>
-        <!--SettingsController-->
+        <!--Metronome-->
         <scene sceneID="Tdu-3y-4Q5">
             <objects>
-                <controller identifier="SettingsController" id="c9d-x3-UP7" customClass="SettingsController" customModule="metro_watch_WatchKit_Extension">
+                <controller identifier="SettingsController" title="Metronome" id="c9d-x3-UP7" customClass="SettingsController" customModule="metro_watch_WatchKit_Extension">
                     <items>
-                        <group width="1" height="175" alignment="left" layout="vertical" spacing="9" id="CQT-4m-Gic">
+                        <group width="1" height="1" alignment="left" layout="vertical" id="CQT-4m-Gic">
                             <items>
-                                <button alignment="center" backgroundImage="play" id="3hN-4b-l8K">
+                                <button width="120" height="100" alignment="center" backgroundImage="play" id="3hN-4b-l8K">
                                     <connections>
                                         <action selector="playButtonTapped" destination="c9d-x3-UP7" id="VzY-W4-Nif"/>
                                     </connections>
                                 </button>
                                 <group width="0.90000000000000002" widthAdjustment="1" alignment="center" id="hKH-F9-PgU">
                                     <items>
-                                        <button width="45" height="40" alignment="center" title="16/3" id="0sE-Ey-PGl">
+                                        <button width="45" height="40" alignment="left" verticalAlignment="center" title="16/3" id="0sE-Ey-PGl">
                                             <fontDescription key="font" type="system" pointSize="12"/>
                                             <connections>
                                                 <action selector="changeTemp" destination="c9d-x3-UP7" id="rTf-aM-EtI"/>
                                                 <segue destination="GVd-b6-mEq" kind="modal" id="J7b-s6-lf0"/>
                                             </connections>
                                         </button>
-                                        <button width="45" height="40" alignment="center" backgroundImage="btn_time" id="odL-na-oEf">
+                                        <button width="45" height="40" alignment="center" verticalAlignment="center" backgroundImage="btn_time" id="odL-na-oEf">
                                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                             <connections>
                                                 <action selector="changeTime" destination="c9d-x3-UP7" id="vAP-J3-y2L"/>
                                                 <segue destination="X2Q-ey-Kbi" kind="modal" id="fBl-92-L6d"/>
                                             </connections>
                                         </button>
-                                        <button width="45" height="40" alignment="center" backgroundImage="btn_note" id="sjE-tv-uGx">
+                                        <button width="45" height="40" alignment="right" verticalAlignment="center" backgroundImage="btn_note" id="sjE-tv-uGx">
                                             <connections>
                                                 <action selector="changeNote" destination="c9d-x3-UP7" id="5Ye-Mo-kcH"/>
                                                 <segue destination="xlY-vh-NpM" kind="modal" id="u1g-rR-IEE"/>
@@ -122,50 +122,51 @@
             <objects>
                 <controller identifier="SongDurationController" id="X2Q-ey-Kbi" customClass="SongDurationController" customModule="metro_watch_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" spacing="0.0" id="cEJ-HI-Xyg">
+                        <group width="1" height="1" alignment="left" layout="vertical" id="cEJ-HI-Xyg">
                             <items>
-                                <label alignment="center" text="Label" id="gT7-Ct-ksc"/>
-                                <group width="1" alignment="center" verticalAlignment="bottom" layout="vertical" spacing="23" id="Yid-Md-hvA">
+                                <label alignment="center" text="SONG DURATION" id="gT7-Ct-ksc">
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </label>
+                                <group width="1" alignment="center" verticalAlignment="center" id="qdf-uw-KUH">
                                     <items>
-                                        <group width="1" alignment="center" id="qdf-uw-KUH">
+                                        <group width="50" height="50" alignment="left" verticalAlignment="center" layout="overlap" id="eET-Re-YwW">
                                             <items>
-                                                <group width="50" height="50" alignment="left" verticalAlignment="center" layout="overlap" id="eET-Re-YwW">
-                                                    <items>
-                                                        <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="f0L-W4-uhX">
-                                                            <connections>
-                                                                <action selector="typePickerChanged:" destination="X2Q-ey-Kbi" id="w1D-cJ-tHL"/>
-                                                            </connections>
-                                                        </picker>
-                                                        <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="EuG-uv-O8J"/>
-                                                    </items>
-                                                </group>
-                                                <group width="50" height="50" alignment="center" verticalAlignment="center" layout="overlap" id="ZV9-pd-gzy">
-                                                    <items>
-                                                        <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="6fD-WY-ZmL">
-                                                            <connections>
-                                                                <action selector="centerPickerChanged:" destination="X2Q-ey-Kbi" id="0Da-Mc-P06"/>
-                                                            </connections>
-                                                        </picker>
-                                                        <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="czl-nB-aas"/>
-                                                    </items>
-                                                </group>
-                                                <group width="50" height="50" alignment="right" verticalAlignment="center" layout="overlap" id="G6h-1j-FR8">
-                                                    <items>
-                                                        <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="7SY-Rn-OQ2">
-                                                            <connections>
-                                                                <action selector="lastPickerChanged:" destination="X2Q-ey-Kbi" id="vMg-A1-mO1"/>
-                                                            </connections>
-                                                        </picker>
-                                                        <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="NUu-z4-aJD"/>
-                                                    </items>
-                                                </group>
+                                                <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="f0L-W4-uhX">
+                                                    <connections>
+                                                        <action selector="typePickerChanged:" destination="X2Q-ey-Kbi" id="w1D-cJ-tHL"/>
+                                                    </connections>
+                                                </picker>
+                                                <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="EuG-uv-O8J"/>
                                             </items>
                                         </group>
-                                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="Gmf-lS-NFV">
-                                            <color key="backgroundColor" red="0.14117647059999999" green="0.7843137255" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        </button>
+                                        <group width="50" height="50" alignment="center" verticalAlignment="center" layout="overlap" id="ZV9-pd-gzy">
+                                            <items>
+                                                <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="6fD-WY-ZmL">
+                                                    <connections>
+                                                        <action selector="centerPickerChanged:" destination="X2Q-ey-Kbi" id="0Da-Mc-P06"/>
+                                                    </connections>
+                                                </picker>
+                                                <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="czl-nB-aas"/>
+                                            </items>
+                                        </group>
+                                        <group width="50" height="50" alignment="right" verticalAlignment="center" layout="overlap" id="G6h-1j-FR8">
+                                            <items>
+                                                <picker width="0.90000000000000002" height="0.90000000000000002" alignment="center" verticalAlignment="center" id="7SY-Rn-OQ2">
+                                                    <connections>
+                                                        <action selector="lastPickerChanged:" destination="X2Q-ey-Kbi" id="vMg-A1-mO1"/>
+                                                    </connections>
+                                                </picker>
+                                                <imageView width="1" alignment="center" verticalAlignment="center" image="white_border_small" id="NUu-z4-aJD"/>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
+                                <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="Gmf-lS-NFV">
+                                    <color key="backgroundColor" red="0.14117647059999999" green="0.7843137255" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="doneTappeed" destination="X2Q-ey-Kbi" id="189-Lg-Kqp"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
@@ -186,7 +187,7 @@
             <objects>
                 <controller identifier="SubdivisionController" id="xlY-vh-NpM" customClass="SubdivisionController" customModule="metro_watch_WatchKit_Extension">
                     <items>
-                        <group width="1" height="166" alignment="center" verticalAlignment="center" layout="vertical" spacing="27" id="Zea-V9-Rcl">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="27" id="Zea-V9-Rcl">
                             <items>
                                 <label alignment="center" text="SUBDIVISION" id="8c8-uK-dE6">
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
