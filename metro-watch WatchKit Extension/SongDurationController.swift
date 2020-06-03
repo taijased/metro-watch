@@ -10,91 +10,11 @@
 import WatchKit
 import Foundation
 
-
-
-enum PickersValueType {
-    case timeSignature
-    case timeSignatureHalf
-    case subdivision
-    case bars
-    case minutes
-    case seconds
-    
-    func getPickerItems() -> [WKPickerItem] {
-        var result: [WKPickerItem] = []
-        switch self {
-        case .timeSignature:
-            let items = [1...60]
-            result = items.map {
-                let pickerItem = WKPickerItem()
-                pickerItem.caption = "\($0)"
-                pickerItem.title = "\($0)"
-                return pickerItem
-            }
-        case .timeSignatureHalf:
-            let items = [1, 2, 4, 8, 16, 32]
-            result = items.map {
-                let pickerItem = WKPickerItem()
-                pickerItem.caption = "\($0)"
-                pickerItem.title = "\($0)"
-                return pickerItem
-            }
-        case .subdivision:
-            let item = WKPickerItem()
-            item.caption = "1"
-            item.caption = "2"
-            return [item]
-        case .bars:
-            var items: [Int] = []
-            for item in 1...99 {
-                items.append(item)
-            }
-            
-            result = items.map {
-                let pickerItem = WKPickerItem()
-                pickerItem.caption = "\($0)"
-                pickerItem.title = "\($0)"
-                return pickerItem
-            }
-        case .minutes:
-            var items: [Int] = []
-            for item in 1...59 {
-                items.append(item)
-            }
-            
-            result = items.map {
-                let pickerItem = WKPickerItem()
-                pickerItem.caption = "\($0)"
-                pickerItem.title = "\($0)"
-                return pickerItem
-            }
-        case .seconds:
-            var items: [Int] = []
-            for item in 1...59 {
-                items.append(item)
-            }
-            
-            result = items.map {
-                let pickerItem = WKPickerItem()
-                pickerItem.caption = "\($0)"
-                pickerItem.title = "\($0)"
-                return pickerItem
-            }
-        }
-
-        return result
-    }
-    
-}
-
-
 class SongDurationController: WKInterfaceController {
     
     
-    //value
     
-    
-    var songDurationValue: (type: Int?, Int?, Int?) = (type: 0, nil, nil)
+    var songDurationValue: TimeDurationState
     
     
     //Type Picker
@@ -105,10 +25,9 @@ class SongDurationController: WKInterfaceController {
     
     
     @IBAction func typePickerChanged(_ value: Int) {
-        
+        WKInterfaceDevice.current().play(.click)
         switch value {
         case 0:
-            
             let offItem = WKPickerItem()
             offItem.caption = "off"
             offItem.title = "-"
@@ -118,6 +37,7 @@ class SongDurationController: WKInterfaceController {
                 self.centerPickerImage.setImage(UIImage(named: "white_border_small"))
                 self.lastPickerImage.setImage(UIImage(named: "white_border_small"))
             }
+            self.songDurationValue = TimeDurationState(type: 0, first: nil, second: nil)
         case 1:
             
             let offItem = WKPickerItem()
@@ -129,6 +49,11 @@ class SongDurationController: WKInterfaceController {
                 self.typePickerImage.setImage(UIImage(named: "white_border_small"))
                 self.lastPickerImage.setImage(UIImage(named: "white_border_small"))
             }
+            
+
+            
+            let first = (self.songDurationValue.first != nil) ? self.songDurationValue.first : 0
+            self.songDurationValue = TimeDurationState(type: 1, first: first, second: nil)
         case 2:
             
             centerPicker.setItems(PickersValueType.minutes.getPickerItems())
@@ -138,14 +63,15 @@ class SongDurationController: WKInterfaceController {
                 self.typePickerImage.setImage(UIImage(named: "white_border_small"))
                 self.centerPickerImage.setImage(UIImage(named: "white_border_small"))
             }
+            let second = (self.songDurationValue.second != nil) ? self.songDurationValue.second : 0
+            let first = (self.songDurationValue.first != nil) ? self.songDurationValue.first : 0
+            self.songDurationValue = TimeDurationState(type: 2, first: first, second: second)
         default:
             break
         }
         DispatchQueue.main.async {
             self.typePickerImage.setImage(UIImage(named: "green_border_small"))
         }
-        
-        self.songDurationValue = (type: 0, nil, nil)
     }
     
     
@@ -156,14 +82,14 @@ class SongDurationController: WKInterfaceController {
     
     
     @IBAction func centerPickerChanged(_ value: Int) {
+        WKInterfaceDevice.current().play(.click)
         DispatchQueue.main.async {
             self.centerPickerImage.setImage(UIImage(named: "green_border_small"))
             self.typePickerImage.setImage(UIImage(named: "white_border_small"))
             self.lastPickerImage.setImage(UIImage(named: "white_border_small"))
         }
-        self.songDurationValue = (type: 1, value, self.songDurationValue.2)
+        self.songDurationValue = TimeDurationState(type: 1, first: value, second: self.songDurationValue.second)
     }
-    
     
     //Last Picker
     
@@ -171,16 +97,26 @@ class SongDurationController: WKInterfaceController {
     @IBOutlet weak var lastPickerImage: WKInterfaceImage!
     @IBOutlet weak var lastPicker: WKInterfacePicker!
     @IBAction func lastPickerChanged(_ value: Int) {
+        WKInterfaceDevice.current().play(.click)
         DispatchQueue.main.async {
             self.centerPickerImage.setImage(UIImage(named: "white_border_small"))
             self.typePickerImage.setImage(UIImage(named: "white_border_small"))
             self.lastPickerImage.setImage(UIImage(named: "green_border_small"))
         }
-        self.songDurationValue = (type: 2, self.songDurationValue.1, value)
+        
+        
+        self.songDurationValue = TimeDurationState(type: 1, first: self.songDurationValue.first, second: value)
+
     }
     
     
     
+    
+    override init() {
+        songDurationValue = UserSettings.timeDuration
+        super.init()
+        
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -203,11 +139,31 @@ class SongDurationController: WKInterfaceController {
         timeItem.caption = "timeItem"
         timeItem.title = "T"
         
-        
-        
+        typePicker.setSelectedItemIndex(songDurationValue.type)
         typePicker.setItems([offItem, barsItem, timeItem])
-        centerPicker.setItems([offItem])
-        lastPicker.setItems([offItem])
+        
+        switch songDurationValue.type {
+        case 0:
+            centerPicker.setItems([offItem])
+            lastPicker.setItems([offItem])
+        case 1:
+            typePicker.setSelectedItemIndex(songDurationValue.type)
+            
+            centerPicker.setItems(PickersValueType.bars.getPickerItems())
+            centerPicker.setSelectedItemIndex(songDurationValue.first ?? 0)
+            lastPicker.setItems([offItem])
+        case 2:
+            typePicker.setSelectedItemIndex(songDurationValue.type)
+            
+            centerPicker.setItems(PickersValueType.minutes.getPickerItems())
+            centerPicker.setSelectedItemIndex(songDurationValue.first ?? 0)
+            lastPicker.setItems(PickersValueType.seconds.getPickerItems())
+            centerPicker.setSelectedItemIndex(songDurationValue.second ?? 0)
+        default:break
+        }
+          
+        
+       
     }
     
     override func willActivate() {
@@ -222,8 +178,11 @@ class SongDurationController: WKInterfaceController {
     
     
     @IBAction func doneTappeed() {
+        UserSettings.timeDuration = self.songDurationValue
+        print("====")
         print(self.songDurationValue)
-        
+        print(UserSettings.timeDuration)
+        self.dismiss()
     }
     
 }

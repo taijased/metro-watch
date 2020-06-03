@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132344EA2487F5B100C3EDDF /* PickersValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132344E92487F5B100C3EDDF /* PickersValueType.swift */; };
 		13C421E224868E5D00FFE119 /* metro-watch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 13C421E124868E5D00FFE119 /* metro-watch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		13C421E824868E5D00FFE119 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13C421E624868E5D00FFE119 /* Interface.storyboard */; };
 		13C421EA24868E5E00FFE119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13C421E924868E5E00FFE119 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 		13C4220F24869DD800FFE119 /* SongDurationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4220E24869DD800FFE119 /* SongDurationController.swift */; };
 		13C4221124869E0500FFE119 /* SubdivisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4221024869E0500FFE119 /* SubdivisionController.swift */; };
 		13C4221324869E2900FFE119 /* TimeSignatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4221224869E2900FFE119 /* TimeSignatureController.swift */; };
+		13EE354B2487E63A003CF1DB /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE354A2487E63A003CF1DB /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		132344E92487F5B100C3EDDF /* PickersValueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickersValueType.swift; sourceTree = "<group>"; };
 		13C421DD24868E5D00FFE119 /* metro-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "metro-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13C421E124868E5D00FFE119 /* metro-watch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "metro-watch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13C421E724868E5D00FFE119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		13C4220E24869DD800FFE119 /* SongDurationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDurationController.swift; sourceTree = "<group>"; };
 		13C4221024869E0500FFE119 /* SubdivisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionController.swift; sourceTree = "<group>"; };
 		13C4221224869E2900FFE119 /* TimeSignatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSignatureController.swift; sourceTree = "<group>"; };
+		13EE354A2487E63A003CF1DB /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,9 +136,11 @@
 				13C4220E24869DD800FFE119 /* SongDurationController.swift */,
 				13C4221024869E0500FFE119 /* SubdivisionController.swift */,
 				13C4221224869E2900FFE119 /* TimeSignatureController.swift */,
+				13EE354A2487E63A003CF1DB /* UserSettings.swift */,
 				13C421FB24868E5F00FFE119 /* Assets.xcassets */,
 				13C421FD24868E5F00FFE119 /* Info.plist */,
 				13C421FE24868E5F00FFE119 /* PushNotificationPayload.apns */,
+				132344E92487F5B100C3EDDF /* PickersValueType.swift */,
 			);
 			path = "metro-watch WatchKit Extension";
 			sourceTree = "<group>";
@@ -269,8 +275,10 @@
 				13C4220D248692B300FFE119 /* SettingsController.swift in Sources */,
 				13C421FA24868E5E00FFE119 /* NotificationController.swift in Sources */,
 				13C4220F24869DD800FFE119 /* SongDurationController.swift in Sources */,
+				132344EA2487F5B100C3EDDF /* PickersValueType.swift in Sources */,
 				13C421F824868E5E00FFE119 /* ExtensionDelegate.swift in Sources */,
 				13C421F624868E5E00FFE119 /* HomeController.swift in Sources */,
+				13EE354B2487E63A003CF1DB /* UserSettings.swift in Sources */,
 				13C4221324869E2900FFE119 /* TimeSignatureController.swift in Sources */,
 				13C4221124869E0500FFE119 /* SubdivisionController.swift in Sources */,
 			);
